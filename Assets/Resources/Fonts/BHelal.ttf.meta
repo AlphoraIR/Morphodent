@@ -1,0 +1,21 @@
+fileFormatVersion: 2
+guid: ea01f9c9e3bc27146a94effdd6655935
+timeCreated: 1533581223
+licenseType: Pro
+TrueTypeFontImporter:
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: B Helal
+  fontNames:
+  - B Helal
+  fallbackFontReferences: []
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

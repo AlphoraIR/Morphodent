@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" xmlns:tools="http://schemas.android.com/tools" package="com.DentalYar.Morphodent" android:installLocation="preferExternal" android:versionCode="6" android:versionName="12.0">
+  <uses-permission android:name="ir.mservices.market.BILLING" />
+  <uses-sdk tools:overrideLibrary="co.ronash.pushe" />
+  <permission android:name="com.DentalYar.Morphodent.permission.C2D_MESSAGE" android:protectionLevel="signature" />
+  <uses-permission android:name="com.DentalYar.Morphodent.permission.C2D_MESSAGE" />
+  <!-- Optional permissions -->
+  <uses-permission android:name="com.google.android.gms.permission.ACTIVITY_RECOGNITION" />
+  <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+  <uses-permission android:name="android.permission.INTERNET" />
+  <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+  <!--optional-->
+  <uses-permission android:name="android.permission.VIBRATE" />
+  <!--optional-->
+  <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+  <!--optional-->
+  <supports-screens android:smallScreens="true" android:normalScreens="true" android:largeScreens="true" android:xlargeScreens="true" android:anyDensity="true" />
+  <application android:icon="@drawable/app_icon" android:label="@string/app_name" android:debuggable="true">
+    <receiver android:name="co.ronash.pushe.receiver.UpdateReceiver">
+      <intent-filter>
+        <action android:name="android.intent.action.PACKAGE_REPLACED" />
+        <data android:path="com.DentalYar.Morphodent" android:scheme="package" />
+      </intent-filter>
+    </receiver>
+    <receiver android:name="com.google.android.gms.gcm.GcmReceiver" android:exported="true" android:permission="com.google.android.c2dm.permission.SEND">
+      <intent-filter>
+        <action android:name="com.google.android.c2dm.intent.RECEIVE" />
+        <action android:name="com.google.android.c2dm.intent.REGISTRATION" />
+        <category android:name="com.DentalYar.Morphodent" />
+      </intent-filter>
+    </receiver>
+    <meta-data android:name="co.ronash.pushe.token" android:value="PUSHE_1046522872936" />
+    <meta-data android:name="co.ronash.pushe.cr" android:value="Tm9uZQ==" />
+    <activity android:name="com.unity3d.player.UnityPlayerActivity" android:label="@string/app_name">
+      <intent-filter>
+        <action android:name="android.intent.action.MAIN" />
+        <category android:name="android.intent.category.LAUNCHER" />
+      </intent-filter>
+      <meta-data android:name="unityplayer.UnityActivity" android:value="true" />
+    </activity>
+    <activity android:name="com.soomla.store.billing.google.GooglePlayIabService$IabActivity" android:theme="@android:style/Theme.Translucent.NoTitleBar.Fullscreen" />
+    <meta-data android:name="billing.service" android:value="google.GooglePlayIabService" />
+  </application>
+</manifest>

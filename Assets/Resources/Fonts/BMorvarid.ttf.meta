@@ -1,0 +1,21 @@
+fileFormatVersion: 2
+guid: 95214f8286f117046b254f8b767ac40b
+timeCreated: 1533581222
+licenseType: Pro
+TrueTypeFontImporter:
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: B Morvarid
+  fontNames:
+  - B Morvarid
+  fallbackFontReferences: []
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

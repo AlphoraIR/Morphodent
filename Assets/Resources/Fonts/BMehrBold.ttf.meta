@@ -1,0 +1,21 @@
+fileFormatVersion: 2
+guid: a7924513a90a12d4ead2b413f84c9212
+timeCreated: 1533581222
+licenseType: Pro
+TrueTypeFontImporter:
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: B Mehr
+  fontNames:
+  - B Mehr
+  fallbackFontReferences: []
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

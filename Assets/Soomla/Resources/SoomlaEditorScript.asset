@@ -1,0 +1,47 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e4e0a197f1a5042dc8fb2cd6ad519b70, type: 3}
+  m_Name: SoomlaEditorScript
+  m_EditorClassIdentifier: 
+  SoomlaSettings:
+    values:
+    - name: Soomla.Store.GPlayBP
+      value: False
+    - name: Soomla.Store.AmazonBP
+      value: False
+    - name: Soomla.Core.SoomlaSecret
+      value: e153500
+    - name: Soomla.Core.DebugMessages
+      value: False
+    - name: Soomla.Core.DebugUnityMessages
+      value: 
+    - name: Soomla.Store.NoneBP
+      value: False
+    - name: Soomla.Store.AndroidPublicKey
+      value: YOUR GOOGLE PLAY PUBLIC KEY
+    - name: Soomla.Store.AndroidTestPurchases
+      value: False
+    - name: Soomla.Store.PlaySsvValidation
+      value: 
+    - name: Soomla.Store.IosSSV
+      value: 
+    - name: Soomla.Store.WP8SimulatorBuild
+      value: 
+    - name: Soomla.Store.WP8TestMode
+      value: 
+    - name: Soomla.Store.MyketBP
+      value: True
+    - name: Soomla.Store.BazaarBP
+      value: False
+    - name: Soomla.Store.AndroidPublicKeyBazaar
+      value: MIHNMA0GCSqGSIb3DQEBAQUAA4G7ADCBtwKBrwC911jy5Ax6Xrreuk2VkochAquPx4yBTKiZwTr138r1jS39Z5zJc3qHJ0L3E6qOd0VkgCygh3pK+HZOghzitHuJdg7YQzWsS8OoUEKkS4IW5jzFfhazL49G+/8ejxnkfmTTFhtCtrv8ppuEAbFjPJo5ERknPuBhKeYJ0yvSXwj2H96l49xo8xVtykX9SgkzoQQOd0ve7x8FohqMxAL6nmFILYn3rfNtgdyATV6qEckCAwEAAQ==
+    - name: Soomla.Store.AndroidPublicKeyMyket
+      value: MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDQWNvHiB0lLpZvdH2I6JJctOxdkKwQ19gHH/n1Oo2f5yFNyLWai2WlBx2fuXV6VRmYWHy4W1phZiVh8eK9GKUqQlsVUci3G4aVFPMYZeEZpCGOlIPeviCUAmAiNgIHNWzGo3yBnjdo8q/FlWlzuEYunZG3f6kt/114fGpcZ1ME5QIDAQAB

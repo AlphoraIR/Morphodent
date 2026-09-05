@@ -1,0 +1,373 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <LangVersion>4</LangVersion>
+  </PropertyGroup>
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>10.0.20506</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <RootNamespace></RootNamespace>
+    <ProjectGuid>{A3001EFD-B8F6-EF9B-DDCD-E705009052AD}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <AssemblyName>Assembly-CSharp-firstpass</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <BaseDirectory>Assets</BaseDirectory>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>Temp\bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;UNITY_5_3_OR_NEWER;UNITY_5_4_OR_NEWER;UNITY_5_5_OR_NEWER;UNITY_5_6_OR_NEWER;UNITY_2017_1_OR_NEWER;UNITY_2017_1_1;UNITY_2017_1;UNITY_2017;ENABLE_AUDIO;ENABLE_CACHING;ENABLE_CLOTH;ENABLE_GENERICS;ENABLE_PVR_GI;ENABLE_MICROPHONE;ENABLE_MULTIPLE_DISPLAYS;ENABLE_PHYSICS;ENABLE_RUNTIME_NAVMESH_BUILDING;ENABLE_SPRITERENDERER_FLIPPING;ENABLE_SPRITES;ENABLE_TERRAIN;ENABLE_RAKNET;ENABLE_DIRECTOR;ENABLE_UNET;ENABLE_LZMA;ENABLE_UNITYEVENTS;ENABLE_WEBCAM;ENABLE_WWW;ENABLE_CLOUD_SERVICES_COLLAB;ENABLE_CLOUD_SERVICES_COLLAB_SOFTLOCKS;ENABLE_CLOUD_SERVICES_ADS;ENABLE_CLOUD_HUB;ENABLE_CLOUD_PROJECT_ID;ENABLE_CLOUD_SERVICES_USE_WEBREQUEST;ENABLE_CLOUD_SERVICES_UNET;ENABLE_CLOUD_SERVICES_BUILD;ENABLE_CLOUD_LICENSE;ENABLE_WEBSOCKET_CLIENT;ENABLE_DIRECTOR_AUDIO;ENABLE_TIMELINE;ENABLE_EDITOR_METRICS;ENABLE_EDITOR_METRICS_CACHING;ENABLE_NATIVE_ARRAY;ENABLE_SPRITE_MASKING;INCLUDE_DYNAMIC_GI;INCLUDE_GI;ENABLE_MONO_BDWGC;PLATFORM_SUPPORTS_MONO;INCLUDE_PUBNUB;ENABLE_PLAYMODE_TESTS_RUNNER;ENABLE_VIDEO;ENABLE_RMGUI;ENABLE_CUSTOM_RENDER_TEXTURE;ENABLE_STYLE_SHEETS;PLATFORM_ANDROID;UNITY_ANDROID;UNITY_ANDROID_API;ENABLE_SUBSTANCE;ENABLE_EGL;ENABLE_NETWORK;ENABLE_RUNTIME_GI;ENABLE_CRUNCH_TEXTURE_COMPRESSION;ENABLE_UNITYWEBREQUEST;ENABLE_CLOUD_SERVICES;ENABLE_CLOUD_SERVICES_ANALYTICS;ENABLE_CLOUD_SERVICES_PURCHASING;ENABLE_CLOUD_SERVICES_CRASH_REPORTING;PLATFORM_SUPPORTS_ADS_ID;UNITY_CAN_SHOW_SPLASH_SCREEN;ENABLE_VR;ENABLE_UNITYADS_RUNTIME;UNITY_UNITYADS_API;ENABLE_MONO;NET_2_0_SUBSET;ENABLE_PROFILER;UNITY_ASSERTIONS;UNITY_EDITOR;UNITY_EDITOR_64;UNITY_EDITOR_WIN;ENABLE_NATIVE_ARRAY_CHECKS;UNITY_TEAM_LICENSE;UNITY_PRO_LICENSE;CROSS_PLATFORM_INPUT;MOBILE_INPUT;SOOMLA_OPEN_SOURCE;UNITY_HAS_GOOGLEVR</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <NoWarn>0169</NoWarn>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>Temp\bin\Release\</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <NoWarn>0169</NoWarn>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.XML" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="UnityEngine">
+      <HintPath>G:/UNITY/UNITY app/Unity/Editor/Data/Managed/UnityEngine.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEditor">
+      <HintPath>G:/UNITY/UNITY app/Unity/Editor/Data/Managed/UnityEditor.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+     <Compile Include="Assets\Standard Assets\CrossPlatformInput\Scripts\AxisTouchButton.cs" />
+     <Compile Include="Assets\Standard Assets\CrossPlatformInput\Scripts\ButtonHandler.cs" />
+     <Compile Include="Assets\Standard Assets\CrossPlatformInput\Scripts\CrossPlatformInputManager.cs" />
+     <Compile Include="Assets\Standard Assets\CrossPlatformInput\Scripts\InputAxisScrollbar.cs" />
+     <Compile Include="Assets\Standard Assets\CrossPlatformInput\Scripts\Joystick.cs" />
+     <Compile Include="Assets\Standard Assets\CrossPlatformInput\Scripts\MobileControlRig.cs" />
+     <Compile Include="Assets\Standard Assets\CrossPlatformInput\Scripts\PlatformSpecific\MobileInput.cs" />
+     <Compile Include="Assets\Standard Assets\CrossPlatformInput\Scripts\PlatformSpecific\StandaloneInput.cs" />
+     <Compile Include="Assets\Standard Assets\CrossPlatformInput\Scripts\TiltInput.cs" />
+     <Compile Include="Assets\Standard Assets\CrossPlatformInput\Scripts\TouchPad.cs" />
+     <Compile Include="Assets\Standard Assets\CrossPlatformInput\Scripts\VirtualInput.cs" />
+     <None Include="Assets\Plugins\Android\play-services-basement-11.8.0\res\values-bs\values.xml" />
+     <None Include="Assets\TextMesh Pro\Resources\LineBreaking Leading Characters.txt" />
+     <None Include="Assets\Plugins\Android\res\drawable\pushe_btn_selector.xml" />
+     <None Include="Assets\Plugins\Android\play-services-base-11.8.0\res\values-es\values.xml" />
+     <None Include="Assets\Plugins\Android\play-services-base-11.8.0\res\values-in\values.xml" />
+     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_Bitmap-Mobile.shader" />
+     <None Include="Assets\Plugins\Android\play-services-basement-11.8.0\res\values-lt\values.xml" />
+     <None Include="Assets\Plugins\Android\play-services-basement-11.8.0\res\values-fi\values.xml" />
+     <None Include="Assets\Plugins\Android\play-services-basement-11.8.0\bin\AndroidManifest.xml" />
+     <None Include="Assets\Plugins\Android\play-services-basement-11.8.0\res\values-vi\values.xml" />
+     <None Include="Assets\Plugins\Android\play-services-base-11.8.0\res\values-kk\values.xml" />
+     <None Include="Assets\Plugins\Android\play-services-basement-11.8.0\res\values-sr\values.xml" />
+     <None Include="Assets\Plugins\Android\play-services-basement-11.8.0\res\values-si\values.xml" />
+     <None Include="Assets\Plugins\Android\play-services-basement-11.8.0\res\values-ro\values.xml" />
+     <None Include="Assets\Plugins\Android\play-services-basement-11.8.0\res\values-hu\values.xml" />
+     <None Include="Assets\Plugins\Android\play-services-base-11.8.0\res\values-pl\values.xml" />
+     <None Include="Assets\TextMesh Pro\Resources\Shaders\Text MeshPro\TMP_SDF-Surface-Mobile.shader" />
+     <None Include="Assets\Plugins\Android\res\layout\pushe_webview_layout.xml" />
+     <None Include="Assets\Plugins\Android\play-services-basement-11.8.0\res\values-zh-rTW\values.xml" />
+     <None Include="Assets\RTLTMPro\Resources\Shaders\TMPro_Surface.cginc" />
+     <None Include="Assets\Plugins\Android\Pushe\bin\AndroidManifest.xml" />
+     <None Include="Assets\TextMesh Pro\Examples &amp; Extras\Fonts\Anton OFL.txt" />
+     <None Include="Assets\Plugins\Android\play-services-basement-11.8.0\res\values-ko\values.xml" />
+     <None Include="Assets\Plugins\Android\play-services-basement-11.8.0\res\values-az\values.xml" />
+     <None Include="Assets\Plugins\Android\play-services-basement-11.8.0\res\values-be\values.xml" />
+     <None Include="Assets\Plugins\Android\Pushe\res\layout\pushe_custom_notification.xml" />
+     <None Include="Assets\Plugins\Android\play-services-base-11.8.0\res\values-hr\values.xml" />
+     <None Include="Assets\Plugins\Android\play-services-base-11.8.0\res\values-fa\values.xml" />
+     <None Include="Assets\Plugins\Android\Pushe\R.txt" />
+     <None Include="Assets\Plugins\Android\play-services-base-11.8.0\res\values-mk\values.xml" />
+     <None Include="Assets\Plugins\Android\Pushe\bin\R.txt" />
+     <None Include="Assets\Plugins\Android\play-services-base-11.8.0\res\values-bg\values.xml" />
+     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMPro_Surface.cginc" />
+     <None Include="Assets\Plugins\Android\play-services-base-11.8.0\res\values-de\values.xml" />
+     <None Include="Assets\Plugins\Android\play-services-basement-11.8.0\res\values-kn\values.xml" />
+     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF-Surface.shader" />
+     <None Include="Assets\RTLTMPro\Resources\Shaders\TMP_SDF-Mobile Masking Fixed.shader" />
+     <None Include="Assets\Plugins\Android\play-services-base-11.8.0\res\values-my\values.xml" />
+     <None Include="Assets\Plugins\Android\play-services-base-11.8.0\res\drawable\common_google_signin_btn_text_dark_normal.xml" />
+     <None Include="Assets\RTLTMPro\Resources\Shaders\TMP_SDF-Surface-Mobile Fixed.shader" />
+     <None Include="Assets\Plugins\Android\play-services-basement-11.8.0\res\values-zh-rCN\values.xml" />
+     <None Include="Assets\Plugins\Android\play-services-basement-11.8.0\res\values-uk\values.xml" />
+     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF.shader" />
+     <None Include="Assets\RTLTMPro\Resources\Shaders\TMP_SDF Overlay Fixed.shader" />
+     <None Include="Assets\Plugins\Android\play-services-basement-11.8.0\res\values-nb\values.xml" />
+     <None Include="Assets\Plugins\Android\play-services-basement-11.8.0\res\values-ja\values.xml" />
+     <None Include="Assets\Plugins\Android\play-services-basement-11.8.0\res\values-ta\values.xml" />
+     <None Include="Assets\Plugins\Android\play-services-base-11.8.0\res\values-az\values.xml" />
+     <None Include="Assets\Plugins\Android\play-services-basement-11.8.0\res\values-nl\values.xml" />
+     <None Include="Assets\Plugins\Android\play-services-basement-11.8.0\res\values-tr\values.xml" />
+     <None Include="Assets\Plugins\Android\Pushe\AndroidManifest.xml" />
+     <None Include="Assets\Plugins\Android\play-services-base-11.8.0\res\values\values.xml" />
+     <None Include="Assets\Plugins\Android\Pushe\res\drawable\pushe_btn_selector.xml" />
+     <None Include="Assets\Plugins\Android\play-services-base-11.8.0\res\values-tl\values.xml" />
+     <None Include="Assets\Plugins\Android\play-services-basement-11.8.0\res\values-sv\values.xml" />
+     <None Include="Assets\Plugins\Android\play-services-basement-11.8.0\res\values-lv\values.xml" />
+     <None Include="Assets\Plugins\Android\play-services-basement-11.8.0\res\values-af\values.xml" />
+     <None Include="Assets\Plugins\Android\play-services-base-11.8.0\res\drawable\common_google_signin_btn_text_light.xml" />
+     <None Include="Assets\Plugins\Android\play-services-base-11.8.0\bin\R.txt" />
+     <None Include="Assets\Plugins\Android\res\layout\pushe_custom_dialog.xml" />
+     <None Include="Assets\Plugins\Android\play-services-base-11.8.0\res\values-fi\values.xml" />
+     <None Include="Assets\Plugins\Android\play-services-base-11.8.0\res\values-es-rUS\values.xml" />
+     <None Include="Assets\Plugins\Android\play-services-base-11.8.0\res\drawable\common_google_signin_btn_text_disabled.xml" />
+     <None Include="Assets\Plugins\Android\play-services-base-11.8.0\res\values-zh-rCN\values.xml" />
+     <None Include="Assets\RTLTMPro\Resources\Shaders\TMPro.cginc" />
+     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF-Mobile Overlay.shader" />
+     <None Include="Assets\Plugins\Android\play-services-base-11.8.0\res\values-fr-rCA\values.xml" />
+     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMPro_Properties.cginc" />
+     <None Include="Assets\Plugins\Android\res\xml\provider_paths.xml" />
+     <None Include="Assets\TextMesh Pro\Resources\Shaders\Text MeshPro\TMPro_Properties.cginc" />
+     <None Include="Assets\Plugins\Android\SoomlaShared\AndroidManifest.xml" />
+     <None Include="Assets\Plugins\Android\play-services-basement-11.8.0\res\values-ru\values.xml" />
+     <None Include="Assets\Plugins\Android\play-services-base-11.8.0\res\drawable\common_google_signin_btn_text_dark.xml" />
+     <None Include="Assets\Plugins\Android\play-services-basement-11.8.0\res\values-hy\values.xml" />
+     <None Include="Assets\Plugins\Android\play-services-basement-11.8.0\res\values-bn\values.xml" />
+     <None Include="Assets\Plugins\Android\play-services-basement-11.8.0\res\values-el\values.xml" />
+     <None Include="Assets\Plugins\Android\play-services-base-11.8.0\res\values-sk\values.xml" />
+     <None Include="Assets\Plugins\Android\play-services-basement-11.8.0\res\values-uz\values.xml" />
+     <None Include="Assets\Plugins\Android\play-services-base-11.8.0\res\values-gu\values.xml" />
+     <None Include="Assets\Plugins\Android\Pushe\res\layout\pushe_custom_dialog.xml" />
+     <None Include="Assets\Plugins\Android\play-services-base-11.8.0\res\values-lt\values.xml" />
+     <None Include="Assets\Plugins\Android\play-services-base-11.8.0\res\values-te\values.xml" />
+     <None Include="Assets\Plugins\Android\play-services-base-11.8.0\res\values-si\values.xml" />
+     <None Include="Assets\Plugins\Android\Pushe\res\values\values.xml" />
+     <None Include="Assets\Plugins\Android\play-services-basement-11.8.0\res\values-ml\values.xml" />
+     <None Include="Assets\TextMesh Pro\Resources\Shaders\Text MeshPro\TMP_Bitmap-Custom-Atlas.shader" />
+     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF-Surface-Mobile.shader" />
+     <None Include="Assets\Plugins\Android\play-services-base-11.8.0\res\values-ky\values.xml" />
+     <None Include="Assets\RTLTMPro\Resources\Shaders\TMP_SDF Fixed.shader" />
+     <None Include="Assets\Plugins\Android\play-services-basement-11.8.0\res\values-sk\values.xml" />
+     <None Include="Assets\Plugins\Android\play-services-basement-11.8.0\bin\R.txt" />
+     <None Include="Assets\Plugins\Android\play-services-basement-11.8.0\res\values-cs\values.xml" />
+     <None Include="Assets\Plugins\Android\play-services-basement-11.8.0\res\values-b+sr+Latn\values.xml" />
+     <None Include="Assets\Plugins\Android\play-services-base-11.8.0\res\color\common_google_signin_btn_tint.xml" />
+     <None Include="Assets\Plugins\Android\play-services-basement-11.8.0\res\values\values.xml" />
+     <None Include="Assets\Plugins\Android\play-services-basement-11.8.0\res\values-in\values.xml" />
+     <None Include="Assets\Plugins\Android\play-services-basement-11.8.0\res\values-ne\values.xml" />
+     <None Include="Assets\Plugins\Android\play-services-base-11.8.0\res\values-mr\values.xml" />
+     <None Include="Assets\Plugins\Android\play-services-basement-11.8.0\res\values-pa\values.xml" />
+     <None Include="Assets\Plugins\Android\play-services-base-11.8.0\res\values-ja\values.xml" />
+     <None Include="Assets\Plugins\Android\play-services-basement-11.8.0\res\values-es-rUS\values.xml" />
+     <None Include="Assets\Plugins\Android\play-services-base-11.8.0\res\values-uz\values.xml" />
+     <None Include="Assets\Plugins\Android\play-services-base-11.8.0\res\values-ar\values.xml" />
+     <None Include="Assets\Plugins\Android\play-services-base-11.8.0\res\drawable\common_google_signin_btn_icon_dark.xml" />
+     <None Include="Assets\Plugins\Android\play-services-basement-11.8.0\res\values-my\values.xml" />
+     <None Include="Assets\Plugins\Android\play-services-base-11.8.0\res\values-lv\values.xml" />
+     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF Overlay.shader" />
+     <None Include="Assets\Plugins\Android\Pushe\res\layout\pushe_webview_layout.xml" />
+     <None Include="Assets\Plugins\Android\play-services-base-11.8.0\res\values-zh-rHK\values.xml" />
+     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMPro.cginc" />
+     <None Include="Assets\Plugins\Android\play-services-basement-11.8.0\res\values-sl\values.xml" />
+     <None Include="Assets\Plugins\Android\play-services-basement-11.8.0\res\values-ky\values.xml" />
+     <None Include="Assets\Plugins\Android\play-services-base-11.8.0\res\values-sw\values.xml" />
+     <None Include="Assets\Plugins\Android\play-services-basement-11.8.0\res\values-et\values.xml" />
+     <None Include="Assets\Plugins\Android\play-services-basement-11.8.0\res\values-am\values.xml" />
+     <None Include="Assets\Plugins\Android\play-services-base-11.8.0\res\values-it\values.xml" />
+     <None Include="Assets\Plugins\Android\play-services-base-11.8.0\res\values-th\values.xml" />
+     <None Include="Assets\Plugins\Android\play-services-base-11.8.0\res\values-ne\values.xml" />
+     <None Include="Assets\Plugins\Android\play-services-base-11.8.0\res\values-nb\values.xml" />
+     <None Include="Assets\Plugins\Android\res\values-mcc432\values-mcc432.xml" />
+     <None Include="Assets\Plugins\Android\play-services-basement-11.8.0\res\values-ur\values.xml" />
+     <None Include="Assets\Plugins\Android\res\drawable\pushe_border.xml" />
+     <None Include="Assets\TextMesh Pro\Examples &amp; Extras\Fonts\Oswald Bold - OFL.txt" />
+     <None Include="Assets\Plugins\Android\play-services-base-11.8.0\res\values-sq\values.xml" />
+     <None Include="Assets\Plugins\Android\play-services-base-11.8.0\res\color\common_google_signin_btn_text_dark.xml" />
+     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF-Mobile Masking.shader" />
+     <None Include="Assets\Plugins\Android\play-services-base-11.8.0\res\values-pt-rBR\values.xml" />
+     <None Include="Assets\Plugins\Android\play-services-base-11.8.0\res\values-kn\values.xml" />
+     <None Include="Assets\Plugins\Android\play-services-base-11.8.0\res\values-hi\values.xml" />
+     <None Include="Assets\Plugins\Android\play-services-basement-11.8.0\res\values-fr-rCA\values.xml" />
+     <None Include="Assets\Plugins\Android\play-services-base-11.8.0\res\values-fr\values.xml" />
+     <None Include="Assets\Plugins\Android\play-services-basement-11.8.0\res\values-hr\values.xml" />
+     <None Include="Assets\Plugins\Android\play-services-base-11.8.0\res\values-lo\values.xml" />
+     <None Include="Assets\Plugins\Android\play-services-base-11.8.0\res\values-hy\values.xml" />
+     <None Include="Assets\Plugins\Android\play-services-basement-11.8.0\res\values-mk\values.xml" />
+     <None Include="Assets\Plugins\Android\play-services-basement-11.8.0\res\values-is\values.xml" />
+     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_Bitmap.shader" />
+     <None Include="Assets\Plugins\Android\play-services-base-11.8.0\res\values-ur\values.xml" />
+     <None Include="Assets\Plugins\Android\play-services-basement-11.8.0\res\values-it\values.xml" />
+     <None Include="Assets\TextMesh Pro\Examples &amp; Extras\Fonts\NotoSans - License.txt" />
+     <None Include="Assets\Plugins\Android\play-services-basement-11.8.0\res\values-te\values.xml" />
+     <None Include="Assets\Plugins\Android\play-services-base-11.8.0\res\values-ta\values.xml" />
+     <None Include="Assets\RTLTMPro\Resources\Shaders\TMP_SDF-Mobile Fixed.shader" />
+     <None Include="Assets\Plugins\Android\play-services-base-11.8.0\res\values-zu\values.xml" />
+     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_Sprite.shader" />
+     <None Include="Assets\Plugins\Android\play-services-basement-11.8.0\res\values-gu\values.xml" />
+     <None Include="Assets\Plugins\Android\play-services-base-11.8.0\res\color\common_google_signin_btn_text_light.xml" />
+     <None Include="Assets\Standard Assets\Fonts\OpenSans\License!.txt" />
+     <None Include="Assets\Plugins\Android\play-services-base-11.8.0\AndroidManifest.xml" />
+     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF-Mobile.shader" />
+     <None Include="Assets\TextMesh Pro\Sprites\EmojiOne Attribution.txt" />
+     <None Include="Assets\Plugins\WP8\Soomla\IAPMock.xml" />
+     <None Include="Assets\TextMesh Pro\Resources\Shaders\Text MeshPro\TMP_SDF-Mobile Masking.shader" />
+     <None Include="Assets\Plugins\Android\play-services-basement-11.8.0\res\values-hi\values.xml" />
+     <None Include="Assets\Plugins\Android\play-services-base-11.8.0\res\values-sl\values.xml" />
+     <None Include="Assets\Plugins\Android\Pushe\res\values-mcc432\values-mcc432.xml" />
+     <None Include="Assets\Plugins\Android\play-services-basement-11.8.0\res\values-ka\values.xml" />
+     <None Include="Assets\Standard Assets\CrossPlatformInput\CrossPlatformInputGuidelines.txt" />
+     <None Include="Assets\Plugins\Android\play-services-base-11.8.0\res\values-mn\values.xml" />
+     <None Include="Assets\Plugins\Android\Pushe\proguard.txt" />
+     <None Include="Assets\Plugins\Android\play-services-base-11.8.0\res\values-el\values.xml" />
+     <None Include="Assets\RTLTMPro\Ranges\NumberRanges.txt" />
+     <None Include="Assets\TextMesh Pro\Resources\LineBreaking Following Characters.txt" />
+     <None Include="Assets\TextMesh Pro\Examples &amp; Extras\Fonts\LiberationSans - OFL.txt" />
+     <None Include="Assets\Plugins\Android\play-services-base-11.8.0\res\values-ro\values.xml" />
+     <None Include="Assets\Plugins\Android\play-services-base-11.8.0\res\values-nl\values.xml" />
+     <None Include="Assets\Plugins\Android\play-services-base-11.8.0\res\values-hu\values.xml" />
+     <None Include="Assets\Plugins\Android\Pushe\res\drawable\pushe_border.xml" />
+     <None Include="Assets\Plugins\Android\play-services-basement-11.8.0\res\values-lo\values.xml" />
+     <None Include="Assets\Plugins\Android\play-services-base-11.8.0\res\drawable\common_google_signin_btn_text_light_normal.xml" />
+     <None Include="Assets\Plugins\Android\play-services-basement-11.8.0\res\values-mn\values.xml" />
+     <None Include="Assets\TextMesh Pro\Resources\Shaders\Text MeshPro\TMP_Bitmap-Mobile.shader" />
+     <None Include="Assets\Plugins\Android\AndroidManifest.xml" />
+     <None Include="Assets\Plugins\Android\play-services-base-11.8.0\res\values-be\values.xml" />
+     <None Include="Assets\Plugins\Android\Pushe\res\xml\provider_paths.xml" />
+     <None Include="Assets\Plugins\Android\play-services-basement-11.8.0\res\values-th\values.xml" />
+     <None Include="Assets\Plugins\Android\play-services-basement-11.8.0\res\values-gl\values.xml" />
+     <None Include="Assets\Plugins\Android\play-services-basement-11.8.0\res\values-mr\values.xml" />
+     <None Include="Assets\Plugins\Android\play-services-base-11.8.0\res\values-am\values.xml" />
+     <None Include="Assets\Plugins\Android\play-services-basement-11.8.0\res\values-da\values.xml" />
+     <None Include="Assets\Plugins\Android\play-services-base-11.8.0\res\drawable\common_google_signin_btn_text_dark_focused.xml" />
+     <None Include="Assets\Plugins\Android\play-services-base-11.8.0\res\values-pa\values.xml" />
+     <None Include="Assets\Plugins\Android\play-services-basement-11.8.0\res\values-ar\values.xml" />
+     <None Include="Assets\TextMesh Pro\Examples &amp; Extras\Fonts\Bangers - OFL.txt" />
+     <None Include="Assets\Plugins\Android\play-services-basement-11.8.0\res\values-sq\values.xml" />
+     <None Include="Assets\Plugins\Android\play-services-base-11.8.0\res\values-gl\values.xml" />
+     <None Include="Assets\TextMesh Pro\Resources\Shaders\Text MeshPro\TMP_SDF Overlay.shader" />
+     <None Include="Assets\Plugins\Android\res\values\values.xml" />
+     <None Include="Assets\Plugins\Android\play-services-base-11.8.0\res\values-eu\values.xml" />
+     <None Include="Assets\Plugins\Android\play-services-base-11.8.0\res\values-ca\values.xml" />
+     <None Include="Assets\Plugins\Android\play-services-base-11.8.0\res\values-iw\values.xml" />
+     <None Include="Assets\Plugins\Android\play-services-base-11.8.0\res\values-zh-rTW\values.xml" />
+     <None Include="Assets\Plugins\Android\Pushe\res\values-en\values-en.xml" />
+     <None Include="Assets\Plugins\Android\play-services-basement-11.8.0\res\values-ms\values.xml" />
+     <None Include="Assets\Plugins\Android\play-services-base-11.8.0\res\values-vi\values.xml" />
+     <None Include="Assets\Plugins\Android\play-services-base-11.8.0\res\values-ms\values.xml" />
+     <None Include="Assets\Plugins\Android\play-services-base-11.8.0\res\values-pt-rPT\values.xml" />
+     <None Include="Assets\Plugins\Android\play-services-basement-11.8.0\res\values-bg\values.xml" />
+     <None Include="Assets\TextMesh Pro\Resources\Shaders\Text MeshPro\TMPro_Surface.cginc" />
+     <None Include="Assets\Plugins\Android\play-services-base-11.8.0\res\drawable\common_google_signin_btn_icon_light.xml" />
+     <None Include="Assets\Plugins\Android\play-services-base-11.8.0\res\values-km\values.xml" />
+     <None Include="Assets\Plugins\Android\play-services-base-11.8.0\res\values-sr\values.xml" />
+     <None Include="Assets\Plugins\Android\play-services-base-11.8.0\res\values-ka\values.xml" />
+     <None Include="Assets\Plugins\Android\play-services-basement-11.8.0\res\values-zu\values.xml" />
+     <None Include="Assets\Plugins\Android\play-services-basement-11.8.0\R.txt" />
+     <None Include="Assets\Plugins\Android\play-services-basement-11.8.0\res\values-fr\values.xml" />
+     <None Include="Assets\Plugins\Android\play-services-base-11.8.0\res\values-sv\values.xml" />
+     <None Include="Assets\Plugins\Android\play-services-base-11.8.0\res\drawable\common_google_signin_btn_text_light_focused.xml" />
+     <None Include="Assets\TextMesh Pro\Resources\Shaders\Text MeshPro\TMP_SDF-Mobile Overlay.shader" />
+     <None Include="Assets\Plugins\Android\play-services-basement-11.8.0\res\values-eu\values.xml" />
+     <None Include="Assets\Plugins\Android\play-services-basement-11.8.0\res\values-es\values.xml" />
+     <None Include="Assets\Plugins\Android\play-services-basement-11.8.0\res\values-pt-rPT\values.xml" />
+     <None Include="Assets\Plugins\Android\play-services-basement-11.8.0\res\values-ca\values.xml" />
+     <None Include="Assets\Plugins\Android\play-services-basement-11.8.0\res\values-pt-rBR\values.xml" />
+     <None Include="Assets\Plugins\Android\play-services-basement-11.8.0\res\values-zh-rHK\values.xml" />
+     <None Include="Assets\Plugins\Android\play-services-base-11.8.0\res\drawable\common_google_signin_btn_icon_disabled.xml" />
+     <None Include="Assets\RTLTMPro\Resources\Shaders\TMP_SDF-Mobile Overlay Fixed.shader" />
+     <None Include="Assets\Plugins\Android\play-services-base-11.8.0\res\values-ru\values.xml" />
+     <None Include="Assets\Plugins\Android\play-services-basement-11.8.0\res\values-en-rGB\values.xml" />
+     <None Include="Assets\Plugins\Android\play-services-basement-11.8.0\res\values-sw\values.xml" />
+     <None Include="Assets\Plugins\Android\play-services-basement-11.8.0\res\values-pl\values.xml" />
+     <None Include="Assets\Plugins\Android\play-services-base-11.8.0\res\values-uk\values.xml" />
+     <None Include="Assets\Plugins\Android\res\layout\pushe_custom_notification.xml" />
+     <None Include="Assets\Plugins\Android\play-services-base-11.8.0\res\values-tr\values.xml" />
+     <None Include="Assets\Plugins\Android\play-services-base-11.8.0\res\values-et\values.xml" />
+     <None Include="Assets\Plugins\Android\play-services-basement-11.8.0\res\values-tl\values.xml" />
+     <None Include="Assets\TextMesh Pro\Resources\Shaders\Text MeshPro\TMP_Bitmap.shader" />
+     <None Include="Assets\Plugins\Android\play-services-base-11.8.0\res\drawable\common_google_signin_btn_icon_dark_normal.xml" />
+     <None Include="Assets\TextMesh Pro\Resources\Shaders\Text MeshPro\TMPro.cginc" />
+     <None Include="Assets\Plugins\Android\play-services-base-11.8.0\res\values-is\values.xml" />
+     <None Include="Assets\Plugins\Android\play-services-base-11.8.0\res\values-ko\values.xml" />
+     <None Include="Assets\RTLTMPro\Ranges\LetterRanges.txt" />
+     <None Include="Assets\RTLTMPro\Resources\Shaders\TMP_SDF-Surface Fixed.shader" />
+     <None Include="Assets\Plugins\Android\play-services-basement-11.8.0\AndroidManifest.xml" />
+     <None Include="Assets\Plugins\Android\play-services-basement-11.8.0\proguard.txt" />
+     <None Include="Assets\TextMesh Pro\Resources\Shaders\Text MeshPro\TMP_SDF.shader" />
+     <None Include="Assets\Plugins\Android\play-services-base-11.8.0\proguard.txt" />
+     <None Include="Assets\Plugins\Android\play-services-base-11.8.0\res\values-en-rGB\values.xml" />
+     <None Include="Assets\Plugins\Android\play-services-basement-11.8.0\res\values-de\values.xml" />
+     <None Include="Assets\Plugins\Android\Soomla\AndroidManifest.xml" />
+     <None Include="Assets\Plugins\Android\play-services-base-11.8.0\res\drawable\common_google_signin_btn_icon_light_normal.xml" />
+     <None Include="Assets\Plugins\Android\play-services-base-11.8.0\res\values-da\values.xml" />
+     <None Include="Assets\TextMesh Pro\Resources\Shaders\Text MeshPro\TMP_SDF-Mobile.shader" />
+     <None Include="Assets\RTLTMPro\Resources\Shaders\TMPro_Properties.cginc" />
+     <None Include="Assets\Plugins\Android\res\values-en\values-en.xml" />
+     <None Include="Assets\Plugins\Android\play-services-base-11.8.0\res\values-bs\values.xml" />
+     <None Include="Assets\Plugins\Android\play-services-basement-11.8.0\res\values-kk\values.xml" />
+     <None Include="Assets\Plugins\Android\play-services-base-11.8.0\res\values-cs\values.xml" />
+     <None Include="Assets\Plugins\Android\play-services-base-11.8.0\res\values-b+sr+Latn\values.xml" />
+     <None Include="Assets\TextMesh Pro\Resources\Shaders\Text MeshPro\TMP_Sprite.shader" />
+     <None Include="Assets\Plugins\Android\play-services-basement-11.8.0\res\values-iw\values.xml" />
+     <None Include="Assets\Plugins\Android\play-services-base-11.8.0\bin\AndroidManifest.xml" />
+     <None Include="Assets\Plugins\Android\play-services-base-11.8.0\res\values-ml\values.xml" />
+     <None Include="Assets\Plugins\Android\play-services-base-11.8.0\res\values-af\values.xml" />
+     <None Include="Assets\TextMesh Pro\Resources\Shaders\Text MeshPro\TMP_SDF-Surface.shader" />
+     <None Include="Assets\RTLTMPro\Resources\Shaders\TMPro_SurfaceOutline.cginc" />
+     <None Include="Assets\Plugins\Android\play-services-base-11.8.0\res\drawable\common_google_signin_btn_icon_dark_focused.xml" />
+     <None Include="Assets\Plugins\Android\play-services-basement-11.8.0\res\values-km\values.xml" />
+     <None Include="Assets\Plugins\Android\play-services-basement-11.8.0\res\values-fa\values.xml" />
+     <None Include="Assets\Plugins\Android\play-services-base-11.8.0\res\values-bn\values.xml" />
+     <None Include="Assets\Plugins\Android\play-services-base-11.8.0\res\drawable\common_google_signin_btn_icon_light_focused.xml" />
+     <None Include="Assets\RTLTMPro\Ranges\TashkilRanges.txt" />
+ <Reference Include="UnityEngine.UI">
+ <HintPath>G:/UNITY/UNITY app/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.Networking">
+ <HintPath>G:/UNITY/UNITY app/Unity/Editor/Data/UnityExtensions/Unity/Networking/UnityEngine.Networking.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.TestRunner">
+ <HintPath>G:/UNITY/UNITY app/Unity/Editor/Data/UnityExtensions/Unity/TestRunner/UnityEngine.TestRunner.dll</HintPath>
+ </Reference>
+ <Reference Include="nunit.framework">
+ <HintPath>G:/UNITY/UNITY app/Unity/Editor/Data/UnityExtensions/Unity/TestRunner/net35/unity-custom/nunit.framework.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.Timeline">
+ <HintPath>G:/UNITY/UNITY app/Unity/Editor/Data/UnityExtensions/Unity/Timeline/RuntimeEditor/UnityEngine.Timeline.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.Analytics">
+ <HintPath>G:/UNITY/UNITY app/Unity/Editor/Data/UnityExtensions/Unity/UnityAnalytics/UnityEngine.Analytics.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.HoloLens">
+ <HintPath>G:/UNITY/UNITY app/Unity/Editor/Data/UnityExtensions/Unity/UnityHoloLens/RuntimeEditor/UnityEngine.HoloLens.dll</HintPath>
+ </Reference>
+ <Reference Include="ArabicSupport">
+ <HintPath>G:/Projects/Unity/Dental/Assets/EGGA/UPersian/Scripts/Utils/ArabicSupport.dll</HintPath>
+ </Reference>
+ <Reference Include="soomla-wp-core">
+ <HintPath>G:/Projects/Unity/Dental/Assets/Plugins/WP8/Soomla/Placeholder/soomla-wp-core.dll</HintPath>
+ </Reference>
+ <Reference Include="wp-store">
+ <HintPath>G:/Projects/Unity/Dental/Assets/Plugins/WP8/Soomla/Placeholder/wp-store.dll</HintPath>
+ </Reference>
+ <Reference Include="TextMeshPro-2017.1-Editor">
+ <HintPath>G:/Projects/Unity/Dental/Assets/TextMesh Pro/Plugins/Editor DLL/TextMeshPro-2017.1-Editor.dll</HintPath>
+ </Reference>
+ <Reference Include="TextMeshPro-2017.1-Runtime">
+ <HintPath>G:/Projects/Unity/Dental/Assets/TextMesh Pro/Plugins/Editor DLL/TextMeshPro-2017.1-Runtime.dll</HintPath>
+ </Reference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  
+</Project>

@@ -1,0 +1,21 @@
+fileFormatVersion: 2
+guid: e9dbd03a4c1ee4d4f9906fb4976926d8
+timeCreated: 1533581223
+licenseType: Pro
+TrueTypeFontImporter:
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: B Mitra
+  fontNames:
+  - B Mitra
+  fallbackFontReferences: []
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

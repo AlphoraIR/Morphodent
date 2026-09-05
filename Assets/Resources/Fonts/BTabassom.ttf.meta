@@ -1,0 +1,21 @@
+fileFormatVersion: 2
+guid: ecbdb37e9f8b808448b854c7ef985a98
+timeCreated: 1533581223
+licenseType: Pro
+TrueTypeFontImporter:
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: B Tabassom
+  fontNames:
+  - B Tabassom
+  fallbackFontReferences: []
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

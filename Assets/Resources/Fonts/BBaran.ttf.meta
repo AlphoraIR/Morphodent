@@ -1,0 +1,21 @@
+fileFormatVersion: 2
+guid: 0aae2953bc089a7438d18bb455857b3d
+timeCreated: 1533581221
+licenseType: Pro
+TrueTypeFontImporter:
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: B Baran
+  fontNames:
+  - B Baran
+  fallbackFontReferences: []
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

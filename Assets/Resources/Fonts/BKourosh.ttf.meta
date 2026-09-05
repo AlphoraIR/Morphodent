@@ -1,0 +1,21 @@
+fileFormatVersion: 2
+guid: 22aca8b69e5576644abfa50f975e4ba6
+timeCreated: 1533581221
+licenseType: Pro
+TrueTypeFontImporter:
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: B Kourosh
+  fontNames:
+  - B Kourosh
+  fallbackFontReferences: []
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

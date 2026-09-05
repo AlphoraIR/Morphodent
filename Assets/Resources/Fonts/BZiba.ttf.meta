@@ -1,0 +1,21 @@
+fileFormatVersion: 2
+guid: f9bea53b49a97484da9097a220ce1709
+timeCreated: 1533581223
+licenseType: Pro
+TrueTypeFontImporter:
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: B Ziba
+  fontNames:
+  - B Ziba
+  fallbackFontReferences: []
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -1,0 +1,37 @@
+﻿<Properties StartupItem="Assembly-CSharp.csproj">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Plugins\Android\play-services-base-11.8.0\bin\AndroidManifest.xml">
+    <Files>
+      <File FileName="Assets\Teeth.cs" Line="1" Column="1" />
+      <File FileName="Assets\Part.cs" Line="1" Column="1" />
+      <File FileName="Assets\CameraController.cs" Line="1" Column="1" />
+      <File FileName="Assets\QuizPanel.cs" Line="1" Column="1" />
+      <File FileName="Assets\SliderController.cs" Line="1" Column="1" />
+      <File FileName="Assets\VideoScript.cs" Line="1" Column="1" />
+      <File FileName="Assets\VideoSelect.cs" Line="1" Column="1" />
+      <File FileName="Assets\RotateLoadingHandler.cs" Line="1" Column="1" />
+      <File FileName="Assets\RTLTMPro\RTLTextMeshPro.cs" Line="1" Column="1" />
+      <File FileName="Assets\Tapsell\Tapsell.cs" Line="1" Column="1" />
+      <File FileName="Assets\SceneLoader.cs" Line="1" Column="1" />
+      <File FileName="Assets\Tapsell\TapsellSimpleJSON.cs" Line="1" Column="1" />
+      <File FileName="Assets\Plugins\Android\AndroidManifest.xml" Line="56" Column="42" />
+      <File FileName="Assets\Soomla-1.6-Sajoudi\StoreEventHandler.cs" Line="43" Column="97" />
+      <File FileName="Assets\Soomla-1.6-Sajoudi\StoreAssets.cs" Line="51" Column="28" />
+      <File FileName="Assets\Plugins\Android\play-services-base-11.8.0\bin\AndroidManifest.xml" Line="20" Column="1" />
+      <File FileName="Assets\Plugins\Android\play-services-base-11.8.0\AndroidManifest.xml" Line="19" Column="5" />
+      <File FileName="Assets\Plugins\Android\play-services-basement-11.8.0\AndroidManifest.xml" Line="19" Column="5" />
+      <File FileName="Assets\Plugins\Android\Pushe\bin\AndroidManifest.xml" Line="9" Column="1" />
+      <File FileName="Assets\Plugins\Android\Pushe\AndroidManifest.xml" Line="8" Column="5" />
+      <File FileName="Assets\Plugins\Android\play-services-basement-11.8.0\bin\AndroidManifest.xml" Line="19" Column="5" />
+      <File FileName="Assets\Soomla\Scripts\Core\Config\SoomlaEditorScript.cs" Line="154" Column="8" />
+      <File FileName="Assets\Plugins\Android\SoomlaShared\AndroidManifest.xml" Line="5" Column="19" />
+      <File FileName="Assets\Plugins\Android\Soomla\AndroidManifest.xml" Line="5" Column="19" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore>
+      <Breakpoint file="C:\Users\toranj\Documents\Dental\Assets\QuizPanel.cs" line="33" column="1" />
+    </BreakpointStore>
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>

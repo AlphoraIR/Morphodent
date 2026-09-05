@@ -1,0 +1,21 @@
+fileFormatVersion: 2
+guid: 5c1b83baca989d24b82a381b29ff30cc
+timeCreated: 1533581221
+licenseType: Pro
+TrueTypeFontImporter:
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: B Bardiya
+  fontNames:
+  - B Bardiya
+  fallbackFontReferences: []
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

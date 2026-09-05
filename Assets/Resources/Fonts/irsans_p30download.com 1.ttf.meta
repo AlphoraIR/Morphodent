@@ -1,0 +1,22 @@
+fileFormatVersion: 2
+guid: 52290e8e42ae05d4ba13640f75a0104b
+timeCreated: 1533581221
+licenseType: Pro
+TrueTypeFontImporter:
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Iranian Sans
+  fontNames:
+  - Iranian Sans
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 7d79a918c183d8c4e9f45952f276309e, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

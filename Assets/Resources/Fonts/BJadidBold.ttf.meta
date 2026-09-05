@@ -1,0 +1,21 @@
+fileFormatVersion: 2
+guid: a91f2ae5da7d56e4ca092eebf651cf56
+timeCreated: 1533581222
+licenseType: Pro
+TrueTypeFontImporter:
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: B Jadid
+  fontNames:
+  - B Jadid
+  fallbackFontReferences: []
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -1,0 +1,21 @@
+fileFormatVersion: 2
+guid: 76ef0836b5e30924a842097f80a37c6c
+timeCreated: 1533581222
+licenseType: Pro
+TrueTypeFontImporter:
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: B Jalal
+  fontNames:
+  - B Jalal
+  fallbackFontReferences: []
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

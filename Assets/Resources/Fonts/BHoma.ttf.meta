@@ -1,0 +1,21 @@
+fileFormatVersion: 2
+guid: b9b729a0086412a418462101b7b72137
+timeCreated: 1533581222
+licenseType: Pro
+TrueTypeFontImporter:
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: B Homa
+  fontNames:
+  - B Homa
+  fallbackFontReferences: []
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

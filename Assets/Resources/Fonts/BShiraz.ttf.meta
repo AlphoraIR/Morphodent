@@ -1,0 +1,21 @@
+fileFormatVersion: 2
+guid: fcc69c7eb07643247aa9a59472aea1df
+timeCreated: 1533581223
+licenseType: Pro
+TrueTypeFontImporter:
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: B Shiraz
+  fontNames:
+  - B Shiraz
+  fallbackFontReferences: []
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -1,0 +1,22 @@
+fileFormatVersion: 2
+guid: 780a1974842d6064bbfb71d95f827a30
+timeCreated: 1533581222
+licenseType: Pro
+TrueTypeFontImporter:
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: B Compset
+  fontNames:
+  - B Compset
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: bed17962dd34baf4fb0eb2869681fffc, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
