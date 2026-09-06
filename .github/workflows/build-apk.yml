@@ -1,0 +1,23 @@
+name: New APK
+
+on:
+  push:
+    branches: [ "main" ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: دریافت کدها از مخزن
+        uses: actions/checkout@v4
+
+      - name: ساخت خروجی اندروید با یونیتی
+        uses: game-ci/unity-builder@v4
+        with:
+          targetPlatform: Android
+
+      - name: آپلود فایل APK ساخته شده
+        uses: actions/upload-artifact@v4
+        with:
+          name: خروجی-اندروید
+          path: build/Android
