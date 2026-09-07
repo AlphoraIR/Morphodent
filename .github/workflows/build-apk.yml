@@ -9,6 +9,17 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
+      - name: آزاد کردن فضای دیسک
+        uses: jlumbroso/free-disk-space@main
+        with:
+          tool-cache: false
+          android: true
+          dotnet: true
+          haskell: true
+          large-packages: true
+          docker-images: true
+          swap-storage: true
+
       - name: دریافت کدها از مخزن
         uses: actions/checkout@v4
 
@@ -21,3 +32,9 @@ jobs:
         with:
           targetPlatform: Android
           unityVersion: 2021.3.30f1
+
+      - name: آپلود فایل APK ساخته شده
+        uses: actions/upload-artifact@v4
+        with:
+          name: خروجی-اندروید
+          path: build/Android
