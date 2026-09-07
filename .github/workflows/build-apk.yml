@@ -20,9 +20,4 @@ jobs:
           UNITY_PASSWORD: ${{ secrets.UNITY_PASSWORD }}
         with:
           targetPlatform: Android
-
-      - name: آپلود فایل APK ساخته شده
-        uses: actions/upload-artifact@v4
-        with:
-          name: خروجی-اندروید
-          path: build/Android
+          unityVersion: 2021.3.30f1
