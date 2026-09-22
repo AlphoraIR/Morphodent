@@ -1,14 +1,22 @@
-name: New APK
+name: Build Android APK
 
 on:
   push:
-    branches: [ "main" ]
+    branches:
+      - main
+
   workflow_dispatch:
 
 jobs:
   build:
+    name: Build Unity Android APK
     runs-on: ubuntu-latest
+
     steps:
+
+      # ---------------------------------------------------------
+      # 1. آزاد کردن فضای دیسک
+      # ---------------------------------------------------------
       - name: آزاد کردن فضای دیسک
         uses: jlumbroso/free-disk-space@main
         with:
@@ -20,21 +28,161 @@ jobs:
           docker-images: true
           swap-storage: true
 
+      # ---------------------------------------------------------
+      # 2. دریافت پروژه
+      # ---------------------------------------------------------
       - name: دریافت کدها از مخزن
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          lfs: true
 
-      - name: ساخت خروجی اندروید با یونیتی
+      # ---------------------------------------------------------
+      # 3. بررسی نسخه Unity
+      # ---------------------------------------------------------
+      - name: بررسی نسخه Unity
+        shell: bash
+        run: |
+          echo "=========================================="
+          echo " Unity Version"
+          echo "=========================================="
+
+          if [ -f "ProjectSettings/ProjectVersion.txt" ]; then
+            cat ProjectSettings/ProjectVersion.txt
+          else
+            echo "ERROR: ProjectSettings/ProjectVersion.txt پیدا نشد."
+            exit 1
+          fi
+
+      # ---------------------------------------------------------
+      # 4. بررسی Package ها
+      # ---------------------------------------------------------
+      - name: بررسی Package های Unity
+        shell: bash
+        run: |
+          echo "=========================================="
+          echo " Packages / manifest.json"
+          echo "=========================================="
+
+          if [ -f "Packages/manifest.json" ]; then
+            cat Packages/manifest.json
+          else
+            echo "ERROR: Packages/manifest.json پیدا نشد."
+            exit 1
+          fi
+
+          echo ""
+          echo "=========================================="
+          echo " Packages / packages-lock.json"
+          echo "=========================================="
+
+          if [ -f "Packages/packages-lock.json" ]; then
+            cat Packages/packages-lock.json
+          else
+            echo "packages-lock.json وجود ندارد."
+            echo "Unity آن را هنگام اجرای Package Manager ایجاد خواهد کرد."
+          fi
+
+      # ---------------------------------------------------------
+      # 5. پاکسازی کامل Cache های Unity
+      #
+      # Library مهم‌ترین قسمت است.
+      # اگر PackageCache خراب باشد، Unity آن را از نو می‌سازد.
+      # ---------------------------------------------------------
+      - name: تعمیر و پاکسازی Cache های Unity
+        shell: bash
+        run: |
+          echo "=========================================="
+          echo " Cleaning Unity generated files"
+          echo "=========================================="
+
+          rm -rf Library
+          rm -rf Temp
+          rm -rf obj
+
+          echo ""
+          echo "Cache های Unity پاک شدند."
+
+      # ---------------------------------------------------------
+      # 6. اطمینان از اینکه Library اشتباهی داخل Repository نباشد
+      # ---------------------------------------------------------
+      - name: بررسی فایل های Generated
+        shell: bash
+        run: |
+          echo "=========================================="
+          echo " Checking generated folders"
+          echo "=========================================="
+
+          if [ -d "Library" ]; then
+            echo "WARNING: Library هنوز وجود دارد."
+          else
+            echo "OK: Library پاک شده."
+          fi
+
+          if [ -d "Temp" ]; then
+            echo "WARNING: Temp هنوز وجود دارد."
+          else
+            echo "OK: Temp پاک شده."
+          fi
+
+          if [ -d "obj" ]; then
+            echo "WARNING: obj هنوز وجود دارد."
+          else
+            echo "OK: obj پاک شده."
+          fi
+
+      # ---------------------------------------------------------
+      # 7. Build Unity
+      #
+      # auto = خواندن نسخه دقیق از ProjectVersion.txt
+      # ---------------------------------------------------------
+      - name: ساخت APK با Unity
         uses: game-ci/unity-builder@v4
         env:
           UNITY_LICENSE: ${{ secrets.UNITY_LICENSE }}
           UNITY_EMAIL: ${{ secrets.UNITY_EMAIL }}
           UNITY_PASSWORD: ${{ secrets.UNITY_PASSWORD }}
-        with:
-          targetPlatform: Android
-          unityVersion: 2021.3.30f1
 
-      - name: آپلود فایل APK ساخته شده
+        with:
+          unityVersion: auto
+          targetPlatform: Android
+          androidExportType: androidPackage
+          buildsPath: build
+
+      # ---------------------------------------------------------
+      # 8. پیدا کردن APK
+      # ---------------------------------------------------------
+      - name: بررسی APK ساخته شده
+        shell: bash
+        run: |
+          echo "=========================================="
+          echo " Searching for APK"
+          echo "=========================================="
+
+          find build -type f -name "*.apk" -print
+
+          APK_COUNT=$(find build -type f -name "*.apk" | wc -l)
+
+          echo ""
+          echo "APK count: $APK_COUNT"
+
+          if [ "$APK_COUNT" -eq 0 ]; then
+            echo ""
+            echo "ERROR: هیچ APK ساخته نشد."
+            echo ""
+            echo "ساخت Unity ظاهراً کامل نشده است."
+            exit 1
+          fi
+
+          echo ""
+          echo "APK با موفقیت ساخته شد."
+
+      # ---------------------------------------------------------
+      # 9. آپلود APK
+      # ---------------------------------------------------------
+      - name: آپلود فایل APK
         uses: actions/upload-artifact@v4
         with:
           name: خروجی-اندروید
-          path: build/Android
+          path: build/**/*.apk
+          if-no-files-found: error
