@@ -9,14 +9,14 @@ on:
 
 jobs:
   build:
-    name: Build Unity Android APK
+    name: Build Unity 2017 Android APK
     runs-on: ubuntu-latest
 
     steps:
 
-      # ---------------------------------------------------------
-      # 1. آزاد کردن فضای دیسک
-      # ---------------------------------------------------------
+      # =========================================================
+      # آزاد کردن فضای دیسک
+      # =========================================================
       - name: آزاد کردن فضای دیسک
         uses: jlumbroso/free-disk-space@main
         with:
@@ -28,72 +28,75 @@ jobs:
           docker-images: true
           swap-storage: true
 
-      # ---------------------------------------------------------
-      # 2. دریافت پروژه
-      # ---------------------------------------------------------
-      - name: دریافت کدها از مخزن
+
+      # =========================================================
+      # دریافت پروژه
+      # =========================================================
+      - name: دریافت پروژه
         uses: actions/checkout@v4
         with:
-          fetch-depth: 0
+          fetch-depth: 1
           lfs: true
 
-      # ---------------------------------------------------------
-      # 3. بررسی نسخه Unity
-      # ---------------------------------------------------------
-      - name: بررسی نسخه Unity
+
+      # =========================================================
+      # بررسی ساختار پروژه
+      # =========================================================
+      - name: بررسی پروژه Unity
         shell: bash
         run: |
           echo "=========================================="
-          echo " Unity Version"
+          echo " Unity Project"
           echo "=========================================="
 
+          echo ""
+          echo "ProjectVersion:"
           if [ -f "ProjectSettings/ProjectVersion.txt" ]; then
             cat ProjectSettings/ProjectVersion.txt
           else
-            echo "ERROR: ProjectSettings/ProjectVersion.txt پیدا نشد."
-            exit 1
-          fi
-
-      # ---------------------------------------------------------
-      # 4. بررسی Package ها
-      # ---------------------------------------------------------
-      - name: بررسی Package های Unity
-        shell: bash
-        run: |
-          echo "=========================================="
-          echo " Packages / manifest.json"
-          echo "=========================================="
-
-          if [ -f "Packages/manifest.json" ]; then
-            cat Packages/manifest.json
-          else
-            echo "ERROR: Packages/manifest.json پیدا نشد."
+            echo "ERROR: ProjectVersion.txt پیدا نشد."
             exit 1
           fi
 
           echo ""
-          echo "=========================================="
-          echo " Packages / packages-lock.json"
-          echo "=========================================="
-
-          if [ -f "Packages/packages-lock.json" ]; then
-            cat Packages/packages-lock.json
+          echo "Assets:"
+          if [ -d "Assets" ]; then
+            echo "OK: Assets موجود است."
           else
-            echo "packages-lock.json وجود ندارد."
-            echo "Unity آن را هنگام اجرای Package Manager ایجاد خواهد کرد."
+            echo "ERROR: Assets پیدا نشد."
+            exit 1
           fi
 
-      # ---------------------------------------------------------
-      # 5. پاکسازی کامل Cache های Unity
+          echo ""
+          echo "ProjectSettings:"
+          if [ -d "ProjectSettings" ]; then
+            echo "OK: ProjectSettings موجود است."
+          else
+            echo "ERROR: ProjectSettings پیدا نشد."
+            exit 1
+          fi
+
+          echo ""
+          echo "Packages:"
+          if [ -d "Packages" ]; then
+            ls -la Packages || true
+          else
+            echo "این پروژه Package Manager جدید ندارد."
+            echo "Unity 2017 Legacy Project detected."
+          fi
+
+
+      # =========================================================
+      # حذف فایل های تولیدی قدیمی
       #
-      # Library مهم‌ترین قسمت است.
-      # اگر PackageCache خراب باشد، Unity آن را از نو می‌سازد.
-      # ---------------------------------------------------------
-      - name: تعمیر و پاکسازی Cache های Unity
+      # پروژه های قدیمی Unity ممکن است Library را Commit کرده باشند.
+      # برای CI بهتر است Unity آن را دوباره بسازد.
+      # =========================================================
+      - name: پاکسازی فایل های Unity
         shell: bash
         run: |
           echo "=========================================="
-          echo " Cleaning Unity generated files"
+          echo " Cleaning Unity generated folders"
           echo "=========================================="
 
           rm -rf Library
@@ -101,41 +104,18 @@ jobs:
           rm -rf obj
 
           echo ""
-          echo "Cache های Unity پاک شدند."
+          echo "Library / Temp / obj پاک شدند."
 
-      # ---------------------------------------------------------
-      # 6. اطمینان از اینکه Library اشتباهی داخل Repository نباشد
-      # ---------------------------------------------------------
-      - name: بررسی فایل های Generated
-        shell: bash
-        run: |
-          echo "=========================================="
-          echo " Checking generated folders"
-          echo "=========================================="
 
-          if [ -d "Library" ]; then
-            echo "WARNING: Library هنوز وجود دارد."
-          else
-            echo "OK: Library پاک شده."
-          fi
-
-          if [ -d "Temp" ]; then
-            echo "WARNING: Temp هنوز وجود دارد."
-          else
-            echo "OK: Temp پاک شده."
-          fi
-
-          if [ -d "obj" ]; then
-            echo "WARNING: obj هنوز وجود دارد."
-          else
-            echo "OK: obj پاک شده."
-          fi
-
-      # ---------------------------------------------------------
-      # 7. Build Unity
+      # =========================================================
+      # ساخت APK
       #
-      # auto = خواندن نسخه دقیق از ProjectVersion.txt
-      # ---------------------------------------------------------
+      # نسخه Unity از ProjectVersion.txt خوانده می شود.
+      # پروژه تو:
+      #
+      # 2017.1.1p4
+      #
+      # =========================================================
       - name: ساخت APK با Unity
         uses: game-ci/unity-builder@v4
         env:
@@ -146,43 +126,46 @@ jobs:
         with:
           unityVersion: auto
           targetPlatform: Android
-          androidExportType: androidPackage
-          buildsPath: build
+          buildMethod: BuildScript.Build
 
-      # ---------------------------------------------------------
-      # 8. پیدا کردن APK
-      # ---------------------------------------------------------
-      - name: بررسی APK ساخته شده
+
+      # =========================================================
+      # پیدا کردن APK
+      # =========================================================
+      - name: پیدا کردن APK
         shell: bash
         run: |
           echo "=========================================="
-          echo " Searching for APK"
+          echo " Searching APK"
           echo "=========================================="
 
-          find build -type f -name "*.apk" -print
+          echo ""
+          echo "تمام فایل های APK:"
+          find . -type f -name "*.apk" -print || true
 
-          APK_COUNT=$(find build -type f -name "*.apk" | wc -l)
+          APK_COUNT=$(find . -type f -name "*.apk" | wc -l)
 
           echo ""
-          echo "APK count: $APK_COUNT"
+          echo "تعداد APK: $APK_COUNT"
 
           if [ "$APK_COUNT" -eq 0 ]; then
             echo ""
-            echo "ERROR: هیچ APK ساخته نشد."
-            echo ""
-            echo "ساخت Unity ظاهراً کامل نشده است."
+            echo "=========================================="
+            echo " ERROR: APK ساخته نشد"
+            echo "=========================================="
             exit 1
           fi
 
           echo ""
-          echo "APK با موفقیت ساخته شد."
+          echo "APK پیدا شد."
 
-      # ---------------------------------------------------------
-      # 9. آپلود APK
-      # ---------------------------------------------------------
-      - name: آپلود فایل APK
+
+      # =========================================================
+      # آپلود APK
+      # =========================================================
+      - name: آپلود APK
         uses: actions/upload-artifact@v4
         with:
           name: خروجی-اندروید
-          path: build/**/*.apk
+          path: "**/*.apk"
           if-no-files-found: error
