@@ -4,8 +4,13 @@ on:
   push:
     branches:
       - main
-
   workflow_dispatch:
+
+env:
+  # پروژه با Unity 2017.1.1p4 ساخته شده ولی GameCI برای این نسخه ایمیج داکر ندارد.
+  # پس Unity پروژه را هنگام بیلد به این نسخه ارتقا می‌دهد.
+  # اگر بیلد با خطای کامپایل شکست خورد، به‌جای این 2018.4.36f1 را امتحان کنید.
+  BUILD_UNITY_VERSION: 2019.4.40f1
 
 jobs:
   build:
@@ -13,10 +18,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-
-      # =========================================================
-      # 1. آزاد کردن فضای دیسک
-      # =========================================================
+      # 1. آزاد کردن فضای دیسک (ایمیج Unity اندروید حجیم است)
       - name: آزاد کردن فضای دیسک
         uses: jlumbroso/free-disk-space@main
         with:
@@ -28,216 +30,62 @@ jobs:
           docker-images: true
           swap-storage: true
 
-
-      # =========================================================
       # 2. دریافت پروژه
-      # =========================================================
       - name: دریافت پروژه
         uses: actions/checkout@v4
         with:
           fetch-depth: 1
           lfs: true
 
-
-      # =========================================================
-      # 3. تشخیص نسخه Unity
-      # =========================================================
-      - name: تشخیص نسخه Unity
+      # 3. نمایش نسخه اصلی پروژه
+      - name: نسخه Unity پروژه
         shell: bash
         run: |
-          echo "=========================================="
-          echo " Unity Version"
-          echo "=========================================="
-
-          if [ ! -f "ProjectSettings/ProjectVersion.txt" ]; then
-            echo "ERROR: ProjectVersion.txt پیدا نشد."
-            exit 1
-          fi
-
           cat ProjectSettings/ProjectVersion.txt
+          echo "Build Unity version: $BUILD_UNITY_VERSION"
 
-          UNITY_VERSION=$(grep "m_EditorVersion:" ProjectSettings/ProjectVersion.txt | head -1 | sed 's/m_EditorVersion: //')
-
-          if [ -z "$UNITY_VERSION" ]; then
-            echo "ERROR: نسخه Unity پیدا نشد."
-            exit 1
-          fi
-
-          echo ""
-          echo "Unity Version: $UNITY_VERSION"
-
-
-      # =========================================================
-      # 4. بررسی ساختار پروژه
-      # =========================================================
-      - name: بررسی ساختار پروژه
-        shell: bash
-        run: |
-          echo "=========================================="
-          echo " Unity Project Structure"
-          echo "=========================================="
-
-          echo ""
-          echo "Assets:"
-          test -d Assets && echo "OK" || {
-            echo "ERROR: Assets وجود ندارد."
-            exit 1
-          }
-
-          echo ""
-          echo "ProjectSettings:"
-          test -d ProjectSettings && echo "OK" || {
-            echo "ERROR: ProjectSettings وجود ندارد."
-            exit 1
-          }
-
-          echo ""
-          echo "Packages:"
-
-          if [ -d Packages ]; then
-            echo "Packages directory exists."
-            ls -la Packages
-          else
-            echo "Legacy Unity project detected."
-            echo "No modern Package Manager directory."
-          fi
-
-
-      # =========================================================
-      # 5. پیدا کردن Build Scripts
-      # =========================================================
-      - name: بررسی Build Script های پروژه
-        shell: bash
-        run: |
-          echo "=========================================="
-          echo " Searching Build Scripts"
-          echo "=========================================="
-
-          echo ""
-          echo "فایل های Editor:"
-          find Assets -type f \
-            \( -iname "*Build*.cs" \
-            -o -iname "*Builder*.cs" \
-            -o -iname "*BuildScript*.cs" \) \
-            -print || true
-
-          echo ""
-          echo "متدهای BuildPlayer:"
-          grep -R \
-            -n \
-            --include="*.cs" \
-            "BuildPipeline.BuildPlayer" \
-            Assets 2>/dev/null || true
-
-
-      # =========================================================
-      # 6. پاکسازی Cache
-      #
-      # Unity باید Library را خودش از صفر بسازد.
-      # =========================================================
+      # 4. پاکسازی کش (Library و obj نباید در گیت باشند)
       - name: پاکسازی Cache های Unity
         shell: bash
         run: |
-          echo "=========================================="
-          echo " Cleaning Unity Cache"
-          echo "=========================================="
+          rm -rf Library Temp obj
+          echo "Cleaned."
 
-          rm -rf Library
-          rm -rf Temp
-          rm -rf obj
-
-          echo ""
-          echo "Library پاک شد."
-          echo "Temp پاک شد."
-          echo "obj پاک شد."
-
-          echo ""
-          echo "Git status:"
-          git status --short || true
-
-
-      # =========================================================
-      # 7. ساخت APK
-      #
-      # versioning: None
-      #
-      # بسیار مهم:
-      # جلوگیری از خطای:
-      #
-      # Branch is dirty.
-      # Refusing to base semantic version...
-      # =========================================================
+      # 5. ساخت APK
       - name: ساخت APK با Unity
         uses: game-ci/unity-builder@v4
         env:
           UNITY_LICENSE: ${{ secrets.UNITY_LICENSE }}
           UNITY_EMAIL: ${{ secrets.UNITY_EMAIL }}
           UNITY_PASSWORD: ${{ secrets.UNITY_PASSWORD }}
-
         with:
-          unityVersion: auto
+          # به‌جای auto، نسخه‌ای که ایمیج داکر دارد
+          unityVersion: ${{ env.BUILD_UNITY_VERSION }}
           targetPlatform: Android
-
-          # جلوگیری از بررسی Semantic Version روی Git
           versioning: None
-
+          # چون پوشه obj که در گیت بوده پاک شده، شاخه dirty حساب می‌شود
+          allowDirtyBuild: true
           androidExportType: androidPackage
           androidSymbolType: none
+          # اجرای خودکار API Updater برای اسکریپت‌های قدیمی 2017
+          customParameters: -accept-apiupdate
+          buildsPath: build
 
-
-      # =========================================================
-      # 8. پیدا کردن APK
-      # =========================================================
+      # 6. بررسی خروجی
       - name: پیدا کردن APK
         shell: bash
         run: |
-          echo "=========================================="
-          echo " Searching APK"
-          echo "=========================================="
-
-          echo ""
-          echo "APK files:"
-
-          find . \
-            -type f \
-            -name "*.apk" \
-            -not -path "./Library/*" \
-            -print
-
-          APK_COUNT=$(find . \
-            -type f \
-            -name "*.apk" \
-            -not -path "./Library/*" \
-            | wc -l)
-
-          echo ""
-          echo "APK count: $APK_COUNT"
-
-          if [ "$APK_COUNT" -eq 0 ]; then
-            echo ""
-            echo "=========================================="
-            echo " ERROR: APK ساخته نشد"
-            echo "=========================================="
-
-            echo ""
-            echo "Build directories:"
-            find . -maxdepth 4 -type d \
-              \( -name "build" -o -name "Build" -o -name "Android" \) \
-              -print || true
-
+          find build -type f -name "*.apk" -print
+          COUNT=$(find build -type f -name "*.apk" | wc -l)
+          if [ "$COUNT" -eq 0 ]; then
+            echo "ERROR: APK ساخته نشد"
             exit 1
           fi
 
-          echo ""
-          echo "APK با موفقیت ساخته شد."
-
-
-      # =========================================================
-      # 9. آپلود APK
-      # =========================================================
+      # 7. آپلود APK
       - name: آپلود APK
         uses: actions/upload-artifact@v4
         with:
-          name: خروجی-اندروید
-          path: "**/*.apk"
+          name: android-apk
+          path: build/**/*.apk
           if-no-files-found: error
